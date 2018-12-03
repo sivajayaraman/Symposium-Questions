@@ -1,0 +1,664 @@
+1) Hard
+#include<stdio.h>
+int *check(static int, static int);
+int main()
+{
+    int *c;
+    c = check(10, 20);
+    printf("%d\n", c);
+    return 0;
+}
+int *check(static int i, static int j)
+{
+    int *p, *q;
+    p = &i;
+    q = &j;
+    if(i >= 45)
+        return (p);
+    else
+        return (q);
+}
+Output:Error.(Function cannot have a static parameter passed)
+____________________________________________________________________________________________
+
+2) Easy
+#include <stdio.h>
+#define MAX 10
+int main()
+{
+    printf("%d",MAX);
+    #define MAX 500
+    printf(" %d",MAX);
+    return 0;
+}
+Output:10 500
+____________________________________________________________________________________________
+
+3)Easy
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+	int i;
+	for(i='a';i<='z';i++)
+		cout<<i<<" ";
+	return 0;
+}
+Output: 97 98 99 100 ... 122
+____________________________________________________________________________________________
+
+4)Easy
+#include<stdio.h>
+int main(){
+    int a=2,b=7,c=10;
+    c=a==b;
+    printf("%d",c);
+    return 0;
+}
+Output: 0
+____________________________________________________________________________________________
+
+5)Easy
+#include <stdio.h>
+int main(){
+    float a,b=45.0;
+    (int)a= b;
+    printf("%d",a);
+    return 0;
+}
+Output: Error.
+____________________________________________________________________________________________
+
+6)Medium
+#include<stdio.h>
+void change(int *b, int n)
+{
+    int i;
+    for(i=0; i<n; i++)
+        *(b+1) = *(b+i)+5;
+}
+int main()
+{
+    int i, a[] = {2, 4, 6, 8, 10};
+    change(a, 5);
+    for(i=0; i<=4; i++)
+        printf("%d ", a[i]);
+    return 0;
+}
+Ans: 2 15 6 8 10
+____________________________________________________________________________________________
+
+7)Easy
+#include <stdio.h>
+int main(){
+	int i,sum=0;
+	for(i=0;i<=20;i++);{
+		sum=sum+i;
+	}
+	printf("%d",sum);
+    return 0;
+}
+Output:21
+____________________________________________________________________________________________
+
+8)Medium
+#include <stdio.h>
+#define d(m,m2) m##m2
+int main()
+{
+	int var12=10;
+	printf("%d\n", d(var,12) );
+	return 0;
+}
+Output:10
+____________________________________________________________________________________________
+
+9)Easy
+#include <stdio.h>
+#if X == 3
+    #define Y 3
+#else
+    #define Y 5
+#endif
+ 
+int main()
+{
+    printf("%d", Y);
+    return 0;
+}
+output: 5
+____________________________________________________________________________________________
+
+10)Medium
+#include <stdio.h>
+int main()
+{
+	int a=(10,20);
+	int b=(40,30);
+	int c=((a--)*b,(--b)*a);
+	printf("%d %d %d",a,b,c);
+	return 0;
+}
+Output: 19 29 551
+____________________________________________________________________________________________
+
+11)Easy
+#include <stdio.h>
+int main()
+{
+	char h[]="Hello";
+	char w[]="world!";
+	printf("The %s %s"+4,h,w);
+	return 0;
+}
+Output: Hello World!
+12)
+#include <stdio.h>
+int main()
+{
+	int a=0,b=1;
+	printf("%.2f\n",(float)b/a );
+	return 0;
+}
+Output:inf
+____________________________________________________________________________________________
+
+13)Easy
+#include <stdio.h>
+int main(){
+	char str[100];
+	scanf("Game of %s",str);
+	printf("%s",str);
+	return 0;
+}
+Input: Game of Thrones
+Output: Thrones
+____________________________________________________________________________________________
+
+14)Easy
+#include <stdio.h>
+int main()
+{
+	int i,sum=0;
+	for(i='a';i<=100;i++)
+	{
+		if(i%2==0)
+		{
+			switch(i)
+			{
+				case 'a' ... 'z':sum=sum+i;
+				break;
+			}
+		}
+	}
+	printf("%d",sum);
+}
+Output: 198
+____________________________________________________________________________________________
+
+15)Medium
+#include <stdio.h>
+main() {
+    int i=-1,j=-1,k=0,l=2,m;
+    m=i++&&j++&&k++||l++; 
+    printf("%d %d %d %d %d",i,j,k,l,m);
+}
+Output: 0 0 1 3 1
+16)Hard
+#include <stdio.h>
+int main() {
+	int t=2,p=3;
+	if(t^p==t-p){
+		printf("Hello ");
+	}
+	printf("World!");
+	return 0;
+}
+Output: Hello World!
+____________________________________________________________________________________________
+
+17)Hard
+#include <stdio.h>
+int method(int x)
+{
+   return (-(~x));
+}
+int main()
+{
+  int x;
+  //Use your own input(of respective data type) and write the corresponding output.
+  scanf("%d",&x);	
+  printf("%d", method(x));
+  return 0;
+}
+Input : User's input.
+Output: User's input + 1
+____________________________________________________________________________________________
+
+18)hard
+#include <stdio.h>
+void method(unsigned n)
+{
+	if(n > 1) method(n/2);
+	printf("%d", n % 2);
+}
+int main(void)
+{
+	int x;
+	//Use your own input(of respective data type) and write the corresponding output.
+	scanf("%d",&x);
+	method((unsigned)x);
+	return 0;
+}
+Input : User's input.
+Output: Binary representation of User's input. 
+____________________________________________________________________________________________
+
+19)
+def fun(n):
+     return n & (n-1)
+n = 12
+print(fun(n))
+Output: 8
+____________________________________________________________________________________________
+
+20)
+def fun(x, y):
+    if (y == 0):
+        return x
+    return fun(x ^ y, (~x & y) << 1)
+x = 4
+y = 2
+print(fun(x, y))
+Output: 2
+____________________________________________________________________________________________
+
+21) Medium
+#include <stdio.h>
+int x=0;
+void message()
+{
+    x++;
+    printf(" HELLO MESSAGE ");
+    main();
+}
+void main()
+{
+    if(x<3)
+    {
+        message();
+    }
+    printf(" HELLO MAIN ");
+}
+OUTPUT: HELLO MESSAGE  HELLO MESSAGE  HELLO MESSAGE  HELLO MAIN  HELLO MAIN  HELLO MAIN  HELLO MAIN
+____________________________________________________________________________________________
+
+22)Easy
+#include <stdio.h>
+void main()
+{
+	printf("IN MAIN");
+	void josephsclg()
+	{
+		printf(" \n IN JOSEPHS COLLEGE");
+	}
+}
+
+OUTPUT:IN MAIN
+
+____________________________________________________________________________________________
+
+23)Medium 
+#include <stdio.h>
+square(float a)
+{
+
+    return(a*a);
+}
+void main()
+{
+	float a,b;
+	printf("\nEnter any number:");
+	scanf("%f",&a);
+	b=square(a);
+	printf("%.2f",b);
+}
+
+INPUT:3
+OUTPUT:9.00
+
+INPUT:1.5
+OUTPUT:2.00
+
+____________________________________________________________________________________________
+
+24)
+#include <stdio.h>
+void main()
+{
+	void gospel();
+	printf("\nBye!");
+}
+void gospel()
+{
+    printf("Hello World!");
+}
+
+OUTPUT: Bye!
+
+____________________________________________________________________________________________
+
+25)Medium
+#include <stdio.h>
+void swap(int *a,int *b)
+{
+    *a=*a+*b;
+    *b=*a-*b;
+    *a=*a-*b;
+}
+void main()
+{
+	int a,b;
+	a=100,b=50;
+	swap(*(&a),*(&b);	\\line 11
+	printf("%d%d",a,b);
+}
+
+OUTPUT:ERROR IN LINE 11
+
+____________________________________________________________________________________________
+
+26)Medium
+#include <stdio.h>
+int reverse(int x)
+{
+    int y;
+    if(x==1||x==0)
+    {
+        return 1;
+    }
+    else
+    {
+        y=x*reverse(x-1);
+    }
+    return y;
+}
+void main()
+{
+	int a,b;
+	scanf("%d",&a);
+	b=reverse(a);
+	printf("%d",b);
+}
+
+INPUT:1
+OUTPUT:1
+INPUT:2
+OUTPUT:2
+INPUT:5
+OUTPUT:120
+
+____________________________________________________________________________________________
+
+27)Hard
+#include <stdio.h>
+void sum(int x)
+{
+    x=x+100;
+}
+void main()
+{
+	extern int a;
+	scanf("%d",&a);	\\8
+	sum(a);		\\9
+	printf("%d",a); \\10
+}
+
+INPUT:100
+OUTPUT:ERROR IN LINE 8,9,10
+
+____________________________________________________________________________________________
+
+28)
+#include <stdio.h>
+void main()
+{
+	float a=13.5;
+	double b=13.5;
+	printf("%f\n%lf",a,a,b);
+}
+
+OUTPUT:13.5
+       13.5
+
+____________________________________________________________________________________________
+
+29) Medium
+#include <stdio.h>
+#define AND &&
+#define ARANGE (a>25 AND a<50)
+void main()
+{
+	int a=30;
+	if(ARANGE)
+    {
+        printf("FORD IS A GOOD GUY");
+    }
+    else
+    {
+        printf("FORD IS A BAD GUY");
+    }
+}
+
+OUTPUT:FORD IS A GOOD GUY
+
+____________________________________________________________________________________________
+
+30) Medium
+#include <stdio.h>
+int i;
+#define ADD for(i=0;i<9;i++)\
+            x+=i;
+void main()
+{
+	int x=20;
+	ADD;
+	printf("%d",x);
+}
+
+OUTPUT:56
+
+____________________________________________________________________________________________
+
+31) Hard
+#include <stdio.h>
+void asdf();
+void lkj();
+#pragma startup asdf
+#pragma exit lkj
+#pragma exit lkj
+void main()
+{
+	printf("\nIN MAIN");
+}
+void asdf()
+{
+    printf("\nASDF");
+}
+void lkj()
+{
+    printf("\nLKJ");
+}
+
+OUTPUT:
+IN MAIN
+
+____________________________________________________________________________________________
+
+32)Easy
+#include <stdio.h>
+# define SEMI ;
+void main()
+{
+    int p=3 SEMI ;;
+	printf("%d",p)SEMI;
+}
+
+OUTPUT:3
+
+____________________________________________________________________________________________
+
+33)Easy
+#include <stdio.h>
+void main()
+{
+    int arr[]={10,20,30,45,67,56,74};
+    int *i,*j;
+    i=&arr[1];
+    j=&arr[5];
+    printf("%d-%d",j-i,*j-*i);
+}
+
+OUTPUT:4-36
+
+____________________________________________________________________________________________
+
+34)Medium
+#include <stdio.h>
+void main()
+{
+    int x[4][2]={{1234,234},{1212,332},{1424,180},{1321,297}};
+    printf("%d",*(*(x)+2)+1);
+}
+
+OUTPUT:1213
+
+____________________________________________________________________________________________
+
+35)
+#include <stdio.h>
+void main()
+{
+    int i,a=2,b=3;
+    float arr[a+3];
+    for(i=0;i<a+b;i++)
+    {
+        scanf("%f",&arr[i]);
+        printf("\n%.0f",arr[i]);
+    }
+}
+
+INPUT:12 13 14 15 16
+OUTPUT:12 13 14 15 16
+
+____________________________________________________________________________________________
+
+36)
+pins={"King's Landing":"1","2":"Winterfell","Casterly Rock":"3"}
+for i in pins.keys():
+     print i
+for i in pins.values():
+     print i
+
+OUTPUT: 
+King's Landing
+2
+Casterly Rock
+1
+Winterfell
+3
+
+____________________________________________________________________________________________
+
+37)
+
+pins ={1,2,3,4,5,"6"}
+i=input()
+if str(i) in pins:
+     print "THAT'S IT"
+INPUT: 	6
+OUTPUT: THAT'S IT
+
+____________________________________________________________________________________________
+
+38)
+
+pins =((2,3),(4,5),(1,2),(7,8),(3))
+print pins[4]
+
+OUTPUT:3
+
+____________________________________________________________________________________________
+
+39)
+
+s="SPARTAAAA!"
+print ("This is %s",%(s))
+
+OUTPUT:ERROR
+
+____________________________________________________________________________________________
+
+
+40)
+pins =((2,3),(4,5),(1,2),(7,8),(3,6))
+print(pins.shape())
+
+OUTPUT:ERROR
+
+____________________________________________________________________________________________
+
+
+41)
+If the file sample.txt contains "apple 
+orange 
+banana
+"
+and the program:
+
+myfile = open("123.txt")
+fruits = myfile.read()
+fruits = fruits.splitlines()
+for i in fruits:
+        print i
+OUTPUT:apple 
+orange 
+banana
+
+
+____________________________________________________________________________________________
+
+42)
+range=30
+for i inrange(0,range,+1):
+	print i
+
+OUTPUT:ERROR
+____________________________________________________________________________________________
+
+43)
+degree={"Engineer":"Scofield","Doctor":"Sara","Doctor":"Tancredi"}
+if "Doctor" in degree.keys():
+        print "Doctor"
+OUTPUT:Doctor
+
+____________________________________________________________________________________________
+
+44)
+
+if True:
+        print "I AM TRUE"
+else:
+        print "I AM FALSE"
+
+OUTPUT:I AM TRUE
+
+____________________________________________________________________________________________
+
+45)
+
+print (9).bit_length()
+
+OUTPUT:4
+
+____________________________________________________________________________________________
+

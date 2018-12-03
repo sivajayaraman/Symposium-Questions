@@ -1,0 +1,272 @@
+1)
+#include <stdio.h>
+int x=0;
+void message()
+{
+    x++;
+    printf(" HELLO MESSAGE ");
+    main();
+}
+void main()
+{
+    if(x<3)
+    {
+        message();
+    }
+    printf(" HELLO MAIN ");
+}
+OUTPUT: HELLO MESSAGE  HELLO MESSAGE  HELLO MESSAGE  HELLO MAIN  HELLO MAIN  HELLO MAIN  HELLO MAIN
+
+---------------------------------------------------------------------------------------------------
+2)
+#include <stdio.h>
+void main()
+{
+	printf("IN MAIN");
+	void josephsclg()
+	{
+		printf(" \n IN JOSEPHS COLLEGE");
+	}
+}
+
+OUTPUT:IN MAIN
+
+---------------------------------------------------------------------------------------------------
+3)
+#include <stdio.h>
+square(float a)
+{
+
+    return(a*a);
+}
+void main()
+{
+	float a,b;
+	printf("\nEnter any number:");
+	scanf("%f",&a);
+	b=square(a);
+	printf("%.2f",b);
+}
+
+INPUT:3
+OUTPUT:9.00
+
+INPUT:1.5
+OUTPUT:2.00
+
+---------------------------------------------------------------------------------------------------
+4)
+#include <stdio.h>
+void main()
+{
+	void gospel();
+	gospel();
+}
+void gospel()
+{
+    printf("This is Gospel for the fallen ones");
+    printf("\nLocked away in permanent slumber");
+    printf("\nAssembling their philosophies");
+    printf("\nFrom pieces of broken memories");
+}
+
+OUTPUT: This is Gospel for the fallen ones
+	Locked away in permanent slumber
+	Assembling their philosophies
+	From pieces of broken memories
+
+---------------------------------------------------------------------------------------------------
+5)
+#include <stdio.h>
+void swap(int *a,int *b)
+{
+    *a=*a+*b;
+    *b=*a-*b;
+    *a=*a-*b;
+}
+void main()
+{
+	int a,b;
+	a=100,b=50;
+	swap(*(&a),*(&b);	\\line 11
+	printf("%d%d",a,b);
+}
+
+OUTPUT:ERROR IN LINE 11
+
+---------------------------------------------------------------------------------------------------
+6)
+#include <stdio.h>
+int reverse(int x)
+{
+    int y;
+    if(x==1||x==0)
+    {
+        return 1;
+    }
+    else
+    {
+        y=x*reverse(x-1);
+    }
+    return y;
+}
+void main()
+{
+	int a,b;
+	scanf("%d",&a);
+	b=reverse(a);
+	printf("%d",b);
+}
+
+INPUT:1
+OUTPUT:1
+INPUT:2
+OUTPUT:2
+INPUT:5
+OUTPUT:120
+
+---------------------------------------------------------------------------------------------------
+7)
+#include <stdio.h>
+void sum(int x)
+{
+    x=x+100;
+}
+void main()
+{
+	extern int a;
+	scanf("%d",&a);	\\8
+	sum(a);		\\9
+	printf("%d",a); \\10
+}
+
+INPUT:100
+OUTPUT:ERROR IN LINE 8,9,10
+
+---------------------------------------------------------------------------------------------------
+8)
+#include <stdio.h>
+void main()
+{
+	float a=13.5;
+	double b=13.5;
+	printf("%f\n%lf",a,a,b);
+}
+
+OUTPUT:13.5
+       13.5
+
+---------------------------------------------------------------------------------------------------
+9)
+#include <stdio.h>
+#define AND &&
+#define ARANGE (a>25 AND a<50)
+void main()
+{
+	int a=30;
+	if(ARANGE)
+    {
+        printf("FORD IS A GOOD GUY");
+    }
+    else
+    {
+        printf("FORD IS A BAD GUY");
+    }
+}
+
+OUTPUT:FORD IS A GOOD GUY
+
+---------------------------------------------------------------------------------------------------
+10)
+#include <stdio.h>
+int i;
+#define ADD for(i=0;i<9;i++)\
+            x+=i;
+void main()
+{
+	int x=20;
+	ADD;
+	printf("%d",x);
+}
+
+OUTPUT:56
+
+---------------------------------------------------------------------------------------------------
+11)
+#include <stdio.h>
+void asdf();
+void lkj();
+#pragma startup asdf
+#pragma exit lkj
+#pragma exit lkj
+void main()
+{
+	printf("\nIN MAIN");
+}
+void asdf()
+{
+    printf("\nASDF");
+}
+void lkj()
+{
+    printf("\nLKJ");
+}
+
+OUTPUT:
+IN MAIN
+
+---------------------------------------------------------------------------------------------------
+12)
+#include <stdio.h>
+# define SEMI ;
+void main()
+{
+    int p=3 SEMI ;;
+	printf("%d",p)SEMI;
+}
+
+OUTPUT:3
+
+---------------------------------------------------------------------------------------------------
+13)
+#include <stdio.h>
+void main()
+{
+    int arr[]={10,20,30,45,67,56,74};
+    int *i,*j;
+    i=&arr[1];
+    j=&arr[5];
+    printf("%d--%d",j-i,*j-*i);
+}
+
+OUTPUT:4--36
+
+---------------------------------------------------------------------------------------------------
+14)
+#include <stdio.h>
+void main()
+{
+    int x[4][2]={{1234,234},{1212,332},{1424,180},{1321,297}};
+    printf("%d",*(*(x)+2)+1);
+}
+
+OUTPUT:1213
+
+---------------------------------------------------------------------------------------------------
+15)
+#include <stdio.h>
+void main()
+{
+    int i,a=2,b=3;
+    float arr[a+3];
+    for(i=0;i<a+b;i++)
+    {
+        scanf("%f",&arr[i]);
+        printf("\n%.0f",arr[i]);
+    }
+}
+
+INPUT:12 13 14 15 16
+OUTPUT:12 13 14 15 16
+
+---------------------------------------------------------------------------------------------------

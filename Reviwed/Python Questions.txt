@@ -1,0 +1,111 @@
+1)
+
+pins={"King's Landing":"1","2":"Winterfell","Casterly Rock":"3"}
+for i in pins.keys():
+     print i
+for i in pins.values():
+     print i
+
+OUTPUT: 
+King's Landing
+2
+Casterly Rock
+1
+Winterfell
+3
+
+____________________________________________________________________________________________
+
+2)
+
+pins ={1,2,3,4,5,"6"}
+i=input()
+if str(i) in pins:
+     print "THAT'S IT"
+INPUT: 	6
+OUTPUT: THAT'S IT
+
+____________________________________________________________________________________________
+
+3)
+
+pins =((2,3),(4,5),(1,2),(7,8),(3))
+print pins[4]
+
+OUTPUT:3
+
+____________________________________________________________________________________________
+
+4)
+
+s="SPARTAAAA!"
+print ("This is %s",%(s))
+
+OUTPUT:ERROR
+
+____________________________________________________________________________________________
+
+
+5)
+pins =((2,3),(4,5),(1,2),(7,8),(3,6))
+print(pins.shape())
+
+OUTPUT:ERROR
+
+____________________________________________________________________________________________
+
+
+6)
+If the file sample.txt contains "apple 
+orange 
+banana
+"
+and the program:
+
+myfile = open("123.txt")
+fruits = myfile.read()
+fruits = fruits.splitlines()
+for i in fruits:
+        print i
+OUTPUT:apple 
+orange 
+banana
+
+
+____________________________________________________________________________________________
+
+7)
+range=30
+for i inrange(0,range,+1):
+	print i
+
+OUTPUT:ERROR
+____________________________________________________________________________________________
+
+8)
+degree={"Engineer":"Scofield","Doctor":"Sara","Doctor":"Tancredi"}
+if "Doctor" in degree.keys():
+        print "Doctor"
+OUTPUT:Doctor
+
+____________________________________________________________________________________________
+
+9)
+
+if True:
+        print "I AM TRUE"
+else:
+        print "I AM FALSE"
+
+OUTPUT:I AM TRUE
+
+____________________________________________________________________________________________
+
+10)
+
+print (9).bit_length()
+
+OUTPUT:4
+
+____________________________________________________________________________________________
+

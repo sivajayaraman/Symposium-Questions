@@ -1,0 +1,286 @@
+1)
+
+1  #include<stdio.h>
+2  int *check(static int i, static int j)
+3  {
+4    int *p, *q;
+5    p = &i;
+6    q = &j;
+7     if(i >= 45)
+8         return (p);
+9     else
+10         return (q);
+11 }
+12 int main()
+13 {
+14     int *c;
+15     c = check(10, 20);
+16     printf("%d\n", c);
+17     return 0;
+18 }
+
+Output: Line 4 Error.
+____________________________________________________________________________________________
+
+2)
+
+1   #include<iostream>
+2   using namespace std; 
+3   class Base {};
+4   class Derived: public Base {};
+5   int main()
+6   {
+7     Derived d;
+8     try {
+9        throw d;
+10    }
+11    catch(Base b) {
+12         cout<<"Caught Base Exception";
+13    }
+14    catch(Derived d) {
+15        cout<<"Caught Derived Exception";
+16    }
+17    return 0;
+18   }
+
+Output: Caught Base Exception
+____________________________________________________________________________________________
+
+3)
+
+1 #include <stdio.h>
+2 int main() {
+3	int t=2,p=3;
+4	if(t^p==t-p){
+5		printf("Hello ");
+6	}
+7	printf("World!");
+8	return 0;
+9 }
+
+Output: Hello World!
+____________________________________________________________________________________________
+
+4)
+
+1  #include <stdio.h>
+2  int method(int x)
+3  {
+4    return (-(~x));
+5  }
+6  int main()
+7  {
+8   int x=0;
+9   scanf("%d",&x);	
+10  printf("%d", method(x));
+11  return 0;
+12 }
+
+Output: 1
+____________________________________________________________________________________________
+
+5)
+
+1  #include <stdio.h>
+2  void method(unsigned n)
+3  {
+4 	if(n > 1) method(n/2);
+5	printf("%d", n % 2);
+6  }
+7  int main(void)
+8  { 
+9	int x=10;
+10	scanf("%d",&x);
+11	method((unsigned)x);
+12	return 0;
+13 }
+
+Output: 1010 
+____________________________________________________________________________________________
+
+6)
+
+1  #include <stdio.h>
+2  void sum(int x)
+3  {
+4     x=x+100;
+5  }
+6  void main()
+7  {
+8  	extern int a;
+9 	scanf("%d",&a);	
+10 	sum(a);		
+11 	printf("%d",a); 
+12  }
+INPUT:100
+
+OUTPUT:ERROR IN LINE 8,9,10
+____________________________________________________________________________________________
+ 
+7)
+
+1  #include <stdio.h>
+2  void asdf();
+3  void lkj();
+4  #pragma startup asdf
+5  #pragma exit lkj
+6  #pragma exit lkj
+7  void main()
+8  {
+9  	printf("\nIN MAIN");
+10 }
+11 void asdf()
+12 {
+13    printf("\nASDF");
+14 }
+15 void lkj()
+16 {
+17    printf("\nLKJ");
+18 }
+
+OUTPUT: IN MAIN
+____________________________________________________________________________________________
+
+8)
+  The Postfix " 418*+2- " is given.Evaluvate the Answer.
+  
+  Output: 10
+____________________________________________________________________________________________
+
+9)
+
+1  #include<stdio.h>
+2  int main()
+3  {
+4 	int arr[] = {23,64,73,175,69};	
+5	int *ptr1 = arr;
+6	int *ptr2 = arr + 3;
+7	printf("%d ",(ptr2 - ptr1));
+8	printf("%d",(char*)ptr2 - (char*) ptr1);
+9	return 0;
+10 }
+
+Output: 3 12
+____________________________________________________________________________________________
+
+10)
+
+1  #include<stdio.h>
+2  int f(int o, int *p, int **q) 
+3  { 
+4  	int y, z; 
+5  	**q += 3; 
+6 	 z = **q; 
+7 	 *p += 4; 
+8 	 y  = *p; 
+9 	 o  += 5; 
+10	 return o + y + z; 
+11 } 
+12
+13 void main() 
+14 { 
+15	 int a, *b, **c; 
+16	 a = 0; 
+17	 b = &a; 
+18	 c = &b; 
+19	 printf("%d ", f(a, b, c)); 
+20	 return 0;
+21 }
+
+Output: 15
+____________________________________________________________________________________________
+
+11)
+
+1  #include <stdio.h>
+2  #define print(x) printf("%d ", x)
+3  int x;
+4  void Q(int z)
+5  {
+6 	z += x;
+7	print(z);
+8  }
+9  void P(int *y)
+10 {
+11	int x = *y + 1;
+12	Q(x);
+13	*y = x - 2;
+14	print(x);
+15 }
+16 main(void)
+17 {
+18	x = 10;
+19	P(&x);
+20	print(x);
+21 }
+
+Output: 21 11 9 
+____________________________________________________________________________________________
+
+12)
+
+1  #include <iostream>
+2  using namespace std;
+3  int fun(int i)
+4  {
+5    if ( i%2) return (i++);
+6    else return fun(fun( i - 1 ));
+7  }
+8  int main()
+9  {
+10   printf(" %d ", fun(200));
+11   return 0;
+12 }
+
+OUTPUT:199
+____________________________________________________________________________________________
+
+13)
+
+1  #include<iostream>
+2  using namespace std;
+3  void set(int & num,int pos)
+4  {
+5  	num |= (1 << pos);
+6  }
+7  int main()
+8  {
+9  	int num = 4, pos = 1;
+10 	set(num, pos);
+11 	cout << (int)(num) << endl;
+12	return 0;
+13 }
+
+Outpu:6
+____________________________________________________________________________________________
+
+14)
+
+1  //The List is 6->5->4->3->2->1 
+2  void fun(struct node* start)
+3  {
+4  if(start == NULL)
+5	return;
+6  printf("%d ", start->data); 
+7  if(start->next != NULL )
+8	fun(start->next->next);
+9  printf("%d ", start->data);
+10 }
+
+Output: 6 4 2 2 4 6
+____________________________________________________________________________________________
+
+15)
+
+1  #include "stdio.h"
+2  int main()
+3  {
+4  	char a[] = { 'A', 'B', 'C', 'D' };
+5	char* ppp = &a;
+6	*ppp++;
+7	printf("%c%c ",*++ppp, --*ppp);
+8  }
+
+Output: C A
+____________________________________________________________________________________________
+

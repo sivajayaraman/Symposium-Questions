@@ -1,0 +1,250 @@
+1)
+
+1 #include <stdio.h>
+2 #define MAX 10
+3 int main()
+4 {
+5    printf("%d",MAX);
+6   #define MAX 500
+7    printf(" %d",MAX);
+8    return 0;
+9 }
+
+Output:10 500
+____________________________________________________________________________________________
+
+2)
+
+1 #include <bits/stdc++.h>
+2 using namespace std;
+3 int main(){
+4	int i;
+5	for(i='a';i<='z';i++)
+6		cout<<i<<" ";
+7	return 0;
+8 }
+
+Output: 97 98 99 100 ... 122
+____________________________________________________________________________________________
+
+3)
+
+1 #include<stdio.h>
+2 int main(){
+3    int a=2,b=7,c=10;
+4    c=a==b;
+5    printf("%d",c);
+6    return 0;
+7 }
+
+Output: 0
+____________________________________________________________________________________________
+
+4)
+
+1 #include <stdio.h>
+2 int main(){
+3    float a,b=45.0;
+4    (int)a= b;
+5    printf("%d",a);
+6    return 0;
+7 }
+
+Output: Error.
+____________________________________________________________________________________________
+
+5)
+
+1 #include <stdio.h>
+2 int main(){
+3	int i,sum=0;
+4	for(i=0;i<=20;i++);{
+5		sum=sum+i;
+6	}
+7	printf("%d",sum);
+8    return 0;
+9 }
+
+Output:21
+
+____________________________________________________________________________________________
+
+6)
+
+1  #include <stdio.h>
+2  #if X == 1
+3     #define Y 2
+4  #else
+5     #define Y 5
+6  #endif
+7  int main()
+8  {
+9    printf("%d", Y);
+10   return 0;
+11 }
+
+Output: 5
+
+____________________________________________________________________________________________
+
+7)
+
+1 #include <stdio.h>
+2 int main()
+3 {
+4 	char h[]="Hello";
+5	char w[]="world!";
+6	printf("The %s %s"+4,h,w);
+7	return 0;
+8 }
+
+Output: Hello World!
+
+____________________________________________________________________________________________
+
+8)
+
+1 #include <stdio.h>
+2 int main(){
+3	char str[100];
+4	scanf("Game of %s",str);
+5	printf("%s",str);
+6	return 0;
+7 }
+Input: Game of Thrones
+
+
+Output: Thrones
+
+____________________________________________________________________________________________
+
+9)
+
+1 #include <stdio.h>
+2 int main()
+3 {
+4	int i,sum=0;
+5	for(i='a';i<=100;i++)
+6	{
+7		if(i%2==0)
+8		{
+9			switch(i)
+10			{
+11				case 'a' ... 'z':sum=sum+i;
+12				break;
+13			}
+14		}
+15	}
+16	printf("%d",sum);
+17 }
+
+Output: 198
+
+____________________________________________________________________________________________
+
+10)
+
+1 #include <stdio.h>
+2 void main()
+3 {
+4	printf("IN MAIN");
+5	void josephsclg()
+6	{
+7		printf(" \n IN JOSEPHS COLLEGE");
+8	}
+9 }
+
+Output: IN MAIN
+
+____________________________________________________________________________________________
+
+11)
+
+1 #include <stdio.h>
+2 #define SEMI ;
+3 void main()
+4 {
+5    int p=3 SEMI ;;
+6	printf("%d",p)SEMI;
+7 }
+
+Output: 3
+
+____________________________________________________________________________________________
+
+12)
+
+1 #include <stdio.h>
+2 void main()
+3 {
+4    int arr[]={10,20,30,45,67,56,74};
+5    int *i,*j;
+6    i=&arr[1];
+7    j=&arr[5];
+8    printf("%d-%d",j-i,*j-*i);
+9 }
+
+Output: 4-36
+
+____________________________________________________________________________________________
+
+13)
+
+1 #include<stdio.h>
+2 int main(){
+3	char c[]="scylla";
+4	printf("%d",printf("%s",c));
+5	return 0;
+6 }
+
+Output: scylla6
+
+____________________________________________________________________________________________
+
+14)
+
+1  #include <stdio.h>
+2  main()
+3  {
+4 	void westWorld();
+5	printf("Bye!");
+6  }
+7  void westWorld()
+8  {
+9    printf("Hello World!");
+10 }
+
+Output: Bye!
+
+____________________________________________________________________________________________
+
+15)
+
+1 #include <stdio.h>
+2 int main()
+3 {
+4  unsigned int data = 15;
+5  data = data << 1;
+6  printf("%d", data);
+7  return 0;
+8 }
+
+Output: 30
+
+____________________________________________________________________________________________
+
+16)
+
+1 range=30
+2 for i inrange(0,range,+1):
+3	print i
+
+Output:ERROR
+
+____________________________________________________________________________________________
+
+17)
+
+1 print (9).bit_length()
+
+Output:4
